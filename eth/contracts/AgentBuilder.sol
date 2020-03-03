@@ -1,4 +1,4 @@
-pragma solidity >=0.4.21 <0.7.0;
+pragma solidity >=0.5.0 <0.7.0;
 
 import './AgentTask.sol';
 
@@ -14,13 +14,14 @@ contract AgentBuilder {
 
     AgentTask[] public agentTasks;
 
-    event Create(bytes32 indexed id, address indexed atAddr);
+    event Create(bytes32 indexed taskId, address indexed agentTaskAddr, address indexed tknAddr, uint256 tknAmount);
 
-    function createAgentTask(bytes32 _id, address _tknAddr) public {
-        AgentTask newAgentTask = new AgentTask(msg.sender, _id, _tknAddr);
+    function createAgentTask(bytes32 _id, address _tknAddr, uint256 _tknAmnt) public {
+        AgentTask newAgentTask = new AgentTask(msg.sender, _id, _tknAddr, _tknAmnt);
+        
         agentTasks.push(newAgentTask);
         registerAts(_id, newAgentTask, 1);
-        emit Create(_id, address(newAgentTask));
+        emit Create(_id, address(newAgentTask), _tknAddr, _tknAmnt);
     }
 
     // Registers agent task contracts
