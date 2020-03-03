@@ -36,7 +36,7 @@ contract AgentTask is Owned {
         require(_tknAddr != address(0), "Token address cannot be an empty address");
         
         ERC20Interface = ERC20(_tknAddr);
-        require(ERC20Interface.approve(address(this), totalAmount));
+        require(ERC20Interface.approve(address(this), _tknAmnt));
         
         owner = _owner;
         taskId = _taskId;

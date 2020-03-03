@@ -4740,9 +4740,49 @@
     "name": "solc",
     "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {
+        "0xb82b382b45ad593e404ed6362c02ddef1bcff582c80a0148fd40daa10e4b6a3b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "taskId",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "agentTaskAddr",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "tknAddr",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tknAmount",
+              "type": "uint256"
+            }
+          ],
+          "name": "Create",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xe437893d8801Af14305b6444BAc213CDFa8fD5a1",
+      "transactionHash": "0xdc9dbf976775bcd24c6a6b9c72208caae2b2de8d6f245ede6558011ec7940d32"
+    }
+  },
   "schemaVersion": "3.0.23",
-  "updatedAt": "2020-03-03T07:06:59.113Z",
+  "updatedAt": "2020-03-03T07:30:27.999Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {}
   },
