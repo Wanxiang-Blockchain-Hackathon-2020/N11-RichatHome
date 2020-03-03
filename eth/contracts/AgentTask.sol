@@ -23,13 +23,10 @@ contract AgentTask is Owned {
     address public tokenAddress;
     
     ERC20 public ERC20Interface;
-    
-    mapping(address => uint256) public agents;
 
     event Transfer(address indexed from, address indexed to, uint256 amount);
     event Credit(address indexed recvr, uint256 amount);
 
-    /// Constructor
     /// @param _owner the owner of this task
     /// @param _taskId the task id
     /// @param _tknAddr the token address to be claimed from for this task
@@ -50,26 +47,13 @@ contract AgentTask is Owned {
     function allowcateCredits(address _recvr, uint256 _amnt) public onlyOwner {
         require(_amnt <= ERC20Interface.balanceOf(address(this)), "Insufficient balances for this project.");
         require(ERC20Interface.approve(_recvr, _amnt));
-        
-        agents[_recvr] = _amnt;
-        
-        emit Credit(_recvr, _amnt);
-    }
 
-    /// Transfers an amount of existing tokens
-    ///  from any caller to another address
-    /// @param _recvr the recipient address
-    /// @param _amnt the amount of token to be transferred to _recvr
-    function transfer(address _recvr, uint256 _amnt) public {
-        require(_amnt <= agents[msg.sender], "Insufficient balance.");
-        agents[msg.sender] -= _amnt;
-        agents[_recvr] += _amnt;
-        emit Transfer(msg.sender, _recvr, _amnt);
+        emit Credit(_recvr, _amnt);
     }
 
     /// Returns the available credits of mine
     function getMyAvailableCredits() public view returns (uint256) {
-        return agents[msg.sender];
+        return ERC20Interface.allowance(address(this), msg.sender);
     }
     
     /// Returns the available balance of this task
