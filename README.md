@@ -27,7 +27,7 @@ Demo: http://richathome.elapps.net
 # 一、架构设计
 每种积分对应一个独立的“积分托管合约”，它负责保管奖励积分、保管用于奖励的有价token（比如ELA）、为用户发放积分、为用户将积分兑换为有价token。
 
-![图片](https://uploader.shimo.im/f/nYouV6BNdg408TnL.png!thumbnail)
+![图片](./images/1.png)
 
 围绕着积分托管合约，这里面有几个角色：
 
@@ -38,7 +38,7 @@ Demo: http://richathome.elapps.net
 * **操作页面**：方便用户调用合约的前端页面，同时也将项目信息、积分信息、领取信息等等都记录在数据库，以备查询使用。
 * **展示页面**：可以展示所有的项目和积分，所有的发放记录。可以过滤和筛选。
 
-![图片](https://uploader.shimo.im/f/C8imRcXy0Ukv3San.png!thumbnail)
+![图片](./images/2.png)
 
 **附加分----GitHub Hook**
 
@@ -47,7 +47,7 @@ Demo: http://richathome.elapps.net
 # 二、页面流程
 1. 创建项目
 
-![图片](https://uploader.shimo.im/f/zZeQLqG4JcAKfaY7.png!thumbnail)
+![图片](./images/3.png)
 
 登录页面获取用户钱包信息，包括地址和公钥等。
 
@@ -55,7 +55,7 @@ Demo: http://richathome.elapps.net
 
 1. 申请奖励
 
-![图片](https://uploader.shimo.im/f/ikq5hAfMSOIOg7zc.png!thumbnail)
+![图片](./images/4.png)
 
 志愿者登录以后获取其公钥和钱包地址。
 
@@ -68,13 +68,13 @@ Demo: http://richathome.elapps.net
 
 1. 兑换奖励
 
-![图片](https://uploader.shimo.im/f/rbX2MactfXg5PPPY.png!thumbnail)
+![图片](./images/5.png)
 
 将积分兑换为奖励，从前端发起合约调用，将积分币转账到对应的项目合约，再由项目合约将对应的ELA转入用户地址，如果是瓜分类型，则等到期之后再转入用户地址。
 
 1. 查看信息
 
-![图片](https://uploader.shimo.im/f/66lCXYWkIrkumvow.png!thumbnail)![图片](https://uploader.shimo.im/f/WNWu9w4rQ481ifQq.png!thumbnail)
+![图片](./images/7.png)![图片](./images/8.png)
 
 
 
