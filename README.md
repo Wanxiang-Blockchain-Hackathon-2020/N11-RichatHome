@@ -1,4 +1,7 @@
 # N11 - 宅富家 Rich@Home - 万向黑客松11号参赛作品
+
+Demo: http://richathome.elapps.net
+
 # 团队 - 宅特工
 
 按加入先后顺序
