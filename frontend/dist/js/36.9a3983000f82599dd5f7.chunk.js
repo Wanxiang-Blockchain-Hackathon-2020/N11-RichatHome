@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[36],{BJfS:function(n,o){n.exports=function(n){return n.replace(/[A-Z]/g,function(n){return"-"+n.toLowerCase()}).toLowerCase()}}}]);
