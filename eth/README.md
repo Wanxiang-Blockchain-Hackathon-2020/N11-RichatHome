@@ -21,3 +21,20 @@
 ## Deploy
 
 `truffle migrate`
+
+## Contracts Interactions Flow
+
+```
+    Agent Contracts
+    ├── contracts
+    │   ├── AgentBuilder.sol
+    │   ├── Owned.sol
+    │   ├── AgentTask.sol
+    │   ├── Migrations.sol
+    ├── migrations  
+       ...
+    └── truffle-config.js
+```
+
+![contracts diagram](https://github.com/Wanxiang-Blockchain-Hackathon-2020/N11-RichatHome/blob/master/docs/images/contracts-diagram.png)
+![activity diagram](https://github.com/Wanxiang-Blockchain-Hackathon-2020/N11-RichatHome/blob/master/docs/images/activity-diagram.png)
